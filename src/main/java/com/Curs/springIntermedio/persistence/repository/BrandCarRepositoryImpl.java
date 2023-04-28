@@ -15,6 +15,7 @@ import java.util.Optional;
 public class BrandCarRepositoryImpl implements IntBrandCarRpository {
     /**
      * Crud de marca coche
+     * final ->  el objeto nunca va a cambiar
      */
     private final IntBrandCarCrudRepository intBrandCarCrudRepository;
     /**
@@ -30,7 +31,7 @@ public class BrandCarRepositoryImpl implements IntBrandCarRpository {
     /**
      *
      * @param id Id de marca coche
-     * @return
+     * @return d
      */
     @Override
     public Optional<BrandCarPojo> getBrandCar(Integer id) {
@@ -42,12 +43,11 @@ public class BrandCarRepositoryImpl implements IntBrandCarRpository {
     @Override
     public BrandCarPojo save(BrandCarPojo newBrandCar) {
         BrandCarEntity brandCarEntity = intBrandCarMapper.toMarcaCocheEntity(newBrandCar);
-        intBrandCarCrudRepository.save(brandCarEntity)
-        return intBrandCarMapper.toMarcaCocheEntity();
+        return intBrandCarMapper.toMarcaCochePojo(intBrandCarCrudRepository.save(brandCarEntity));
     }
 
     @Override
     public void delete(Integer idBrandCar) {
-
+    intBrandCarCrudRepository.deleteById(idBrandCar);
     }
 }
