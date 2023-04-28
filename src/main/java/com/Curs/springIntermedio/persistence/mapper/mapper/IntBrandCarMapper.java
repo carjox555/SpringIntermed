@@ -1,7 +1,7 @@
-package com.Curs.demoIntermedio.persistence.mapper.mapper;
+package com.Curs.springIntermedio.persistence.mapper.mapper;
 
-import com.Curs.demoIntermedio.domain.pojo.BrandCarPojo;
-import com.Curs.demoIntermedio.persistence.entity.BrandCarEntity;
+import com.Curs.springIntermedio.domain.pojo.BrandCarPojo;
+import com.Curs.springIntermedio.persistence.entity.BrandCarEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -34,7 +34,7 @@ public interface IntBrandCarMapper {
      * @param marcacocheEntity Entidad a transformar
      * @return lista transformada
      */
-    List<BrandCarPojo> toMacasCochePojo(List<BrandCarEntity>marcacocheEntity);
+    List<BrandCarPojo> toMarcasCochePojo(List<BrandCarEntity>marcacocheEntity);
 
 
 }

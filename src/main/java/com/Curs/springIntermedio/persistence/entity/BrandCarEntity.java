@@ -1,4 +1,4 @@
-package com.Curs.demoIntermedio.persistence.entity;
+package com.Curs.springIntermedio.persistence.entity;
 
 import jakarta.persistence.*;
 
