@@ -1,7 +1,7 @@
-package com.Curs.springIntermedio.domain.service;
+package com.project.cochesIntermed.domain.service;
 
-import com.Curs.springIntermedio.domain.pojo.BrandCarPojo;
-import com.Curs.springIntermedio.domain.repository.IntBrandCarRpository;
+import com.project.cochesIntermed.domain.pojo.BrandCarPojo;
+import com.project.cochesIntermed.domain.repository.IntBrandCarRpository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,17 +18,17 @@ public class BrandCarServiceImpl implements IntBrandCarService {
 
     @Override
     public List<BrandCarPojo> getAll() {
-        return null;
+        return intBrandCarRpository.getAll();
     }
 
     @Override
     public Optional<BrandCarPojo> getBrandCar(Integer id) {
-        return Optional.empty();
+        return intBrandCarRpository.getBrandCar(id);
     }
 
     @Override
     public BrandCarPojo save(BrandCarPojo newBrandCar) {
-        return null;
+        return intBrandCarRpository.save(newBrandCar);
     }
 
     @Override

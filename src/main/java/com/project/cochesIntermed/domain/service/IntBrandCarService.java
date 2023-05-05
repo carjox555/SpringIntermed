@@ -1,6 +1,6 @@
-package com.Curs.springIntermedio.domain.service;
+package com.project.cochesIntermed.domain.service;
 
-import com.Curs.springIntermedio.domain.pojo.BrandCarPojo;
+import com.project.cochesIntermed.domain.pojo.BrandCarPojo;
 
 import java.util.List;
 import java.util.Optional;

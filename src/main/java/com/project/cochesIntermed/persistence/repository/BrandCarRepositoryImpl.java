@@ -1,9 +1,9 @@
-package com.Curs.springIntermedio.persistence.repository;
+package com.project.cochesIntermed.persistence.repository;
 
-import com.Curs.springIntermedio.domain.pojo.BrandCarPojo;
-import com.Curs.springIntermedio.domain.repository.IntBrandCarRpository;
-import com.Curs.springIntermedio.persistence.entity.BrandCarEntity;
-import com.Curs.springIntermedio.persistence.mapper.mapper.IntBrandCarMapper;
+import com.project.cochesIntermed.persistence.mapper.mapper.IntBrandCarMapper;
+import com.project.cochesIntermed.domain.pojo.BrandCarPojo;
+import com.project.cochesIntermed.domain.repository.IntBrandCarRpository;
+import com.project.cochesIntermed.persistence.entity.BrandCarEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
