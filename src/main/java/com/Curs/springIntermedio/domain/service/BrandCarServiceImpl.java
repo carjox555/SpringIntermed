@@ -2,18 +2,21 @@ package com.Curs.springIntermedio.domain.service;
 
 import com.Curs.springIntermedio.domain.pojo.BrandCarPojo;
 import com.Curs.springIntermedio.domain.repository.IntBrandCarRpository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor
-
+//@RequiredArgsConstructor
 @Service
 public class BrandCarServiceImpl implements IntBrandCarService {
 
     private final IntBrandCarRpository intBrandCarRpository;
+    public BrandCarServiceImpl(IntBrandCarRpository intBrandCarRpository) {
+        // Constructor vacío necesario para inicializar intBrandCarRpository
+        this.intBrandCarRpository = intBrandCarRpository;
+    }
+
 
 
     @Override

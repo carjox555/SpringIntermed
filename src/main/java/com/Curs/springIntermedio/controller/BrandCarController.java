@@ -8,17 +8,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(path = "/marca-coches")
 public class BrandCarController {
-    private final IntBrandCarService iBranchCarService;
+    private final IntBrandCarService intBrandCarService;
+
 
     @GetMapping()
     public ResponseEntity<List<BrandCarPojo>> getAll() {
-        return ResponseEntity.ok(iBranchCarService.getAll());
+        return ResponseEntity.ok(intBrandCarService.getAll());
         //return ResponseEntity.status(HttpStatus.OK)
           //      .body(iBranchCarService.getAll());
         //return new ResposeEntity<>(iBrandCarService.getAll(), HttpStatus.OK);
@@ -26,14 +26,14 @@ public class BrandCarController {
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<BrandCarPojo> getBrandCar(@PathVariable Integer id ) {
-        return ResponseEntity.of(iBranchCarService.getBrandCar(id));
+        return ResponseEntity.of(intBrandCarService.getBrandCar(id));
     }
 
     @PostMapping
     public ResponseEntity<BrandCarPojo> save(@RequestBody BrandCarPojo brandCarPojoNew){
         try {
             return ResponseEntity.status(HttpStatus.CREATED)
-                    .body(iBranchCarService.save(brandCarPojoNew));
+                    .body(intBrandCarService.save(brandCarPojoNew));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
@@ -41,11 +41,11 @@ public class BrandCarController {
     @PutMapping
     public ResponseEntity<BrandCarPojo>update(@RequestBody BrandCarPojo brandCarPojoUpdate){
         return ResponseEntity.status(HttpStatus.OK)
-                .body(iBranchCarService.save(brandCarPojoUpdate));
+                .body(intBrandCarService.save(brandCarPojoUpdate));
     }
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<BrandCarPojo> delete(@PathVariable Integer id){
-    return  new ResponseEntity<>(this.iBranchCarService.delete(id) ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+    return  new ResponseEntity<>(this.intBrandCarService.delete(id) ? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
 
 }
