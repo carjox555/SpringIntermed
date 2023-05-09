@@ -1,7 +1,7 @@
-package com.Curs.springIntermedio.persistence.mapper.mapper;
+package com.project.cochesIntermed.persistence.mapper.mapper;
 
-import com.Curs.springIntermedio.domain.pojo.BrandCarPojo;
-import com.Curs.springIntermedio.persistence.entity.BrandCarEntity;
+import com.project.cochesIntermed.domain.pojo.BrandCarPojo;
+import com.project.cochesIntermed.persistence.entity.BrandCarEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

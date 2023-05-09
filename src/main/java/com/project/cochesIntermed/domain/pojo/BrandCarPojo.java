@@ -1,4 +1,4 @@
-package com.Curs.springIntermedio.domain.pojo;
+package com.project.cochesIntermed.domain.pojo;
 
 import lombok.Getter;
 import lombok.Setter;

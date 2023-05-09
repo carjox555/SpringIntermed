@@ -1,13 +1,17 @@
-package com.Curs.springIntermedio.controller;
+package com.project.cochesIntermed.controller;
 
-import com.Curs.springIntermedio.domain.pojo.BrandCarPojo;
-import com.Curs.springIntermedio.domain.service.IntBrandCarService;
+import com.project.cochesIntermed.domain.service.IntBrandCarService;
+import com.project.cochesIntermed.domain.pojo.BrandCarPojo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+<<<<<<< HEAD:src/main/java/com/Curs/springIntermedio/controller/BrandCarController.java
+=======
+
+>>>>>>> 11566f72315b27ac6f278bbc79dec6fc8dd5c477:src/main/java/com/project/cochesIntermed/controller/BrandCarController.java
 
 @RequiredArgsConstructor
 @RestController
@@ -16,7 +20,9 @@ public class BrandCarController {
     private final IntBrandCarService intBrandCarService;
 
 
-    @GetMapping()
+
+
+    @GetMapping
     public ResponseEntity<List<BrandCarPojo>> getAll() {
         return ResponseEntity.ok(intBrandCarService.getAll());
         //return ResponseEntity.status(HttpStatus.OK)
