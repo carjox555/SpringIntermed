@@ -1,29 +1,27 @@
 package com.project.cochesIntermed.controller;
 
 import com.project.cochesIntermed.domain.service.IntBrandCarService;
-import com.project.cochesIntermed.domain.pojo.BrandCarPojo;
+import com.project.cochesIntermed.domain.dto.BrandCarDto;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-<<<<<<< HEAD:src/main/java/com/Curs/springIntermedio/controller/BrandCarController.java
-=======
 
->>>>>>> 11566f72315b27ac6f278bbc79dec6fc8dd5c477:src/main/java/com/project/cochesIntermed/controller/BrandCarController.java
-
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @RestController
 @RequestMapping(path = "/marca-coches")
 public class BrandCarController {
-    private final IntBrandCarService intBrandCarService;
 
-
-
+    private IntBrandCarService intBrandCarService;
 
     @GetMapping
-    public ResponseEntity<List<BrandCarPojo>> getAll() {
+    public ResponseEntity<List<BrandCarDto>> getAll() {
         return ResponseEntity.ok(intBrandCarService.getAll());
         //return ResponseEntity.status(HttpStatus.OK)
           //      .body(iBranchCarService.getAll());
@@ -31,12 +29,12 @@ public class BrandCarController {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<BrandCarPojo> getBrandCar(@PathVariable Integer id ) {
+    public ResponseEntity<BrandCarDto> getBrandCar(@PathVariable Integer id ) {
         return ResponseEntity.of(intBrandCarService.getBrandCar(id));
     }
 
     @PostMapping
-    public ResponseEntity<BrandCarPojo> save(@RequestBody BrandCarPojo brandCarPojoNew){
+    public ResponseEntity<BrandCarDto> save(@RequestBody BrandCarDto brandCarPojoNew){
         try {
             return ResponseEntity.status(HttpStatus.CREATED)
                     .body(intBrandCarService.save(brandCarPojoNew));
@@ -45,12 +43,12 @@ public class BrandCarController {
         }
     }
     @PutMapping
-    public ResponseEntity<BrandCarPojo>update(@RequestBody BrandCarPojo brandCarPojoUpdate){
+    public ResponseEntity<BrandCarDto>update(@RequestBody BrandCarDto brandCarPojoUpdate){
         return ResponseEntity.status(HttpStatus.OK)
                 .body(intBrandCarService.save(brandCarPojoUpdate));
     }
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<BrandCarPojo> delete(@PathVariable Integer id){
+    public ResponseEntity<BrandCarDto> delete(@PathVariable Integer id){
     return  new ResponseEntity<>(this.intBrandCarService.delete(id) ? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
 

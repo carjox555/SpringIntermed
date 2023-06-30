@@ -1,6 +1,6 @@
 package com.project.cochesIntermed.persistence.mapper.mapper;
 
-import com.project.cochesIntermed.domain.pojo.BrandCarPojo;
+import com.project.cochesIntermed.domain.dto.BrandCarDto;
 import com.project.cochesIntermed.persistence.entity.BrandCarEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -8,6 +8,9 @@ import org.mapstruct.Mapping;
 
 import java.util.List;
 
+/**
+ * Mapper que transforma objetos de marcaCoche a pojos o entidades
+ */
 @Mapper (componentModel = "spring")
 public interface IntBrandCarMapper {
 
@@ -18,23 +21,22 @@ public interface IntBrandCarMapper {
      */
     @Mapping(source="id", target = "id")
     @Mapping(source="description", target = "description")
-    BrandCarPojo toMarcaCochePojo(BrandCarEntity marcaEntity);
-
+    BrandCarDto toMarcaCochePojo(BrandCarEntity marcaEntity);
     /**
      * Convierte un pojo a una entidad de marca coche
      * @param marcaPojo Pojo a convertir
      * @return Entity convertido
      */
-    @InheritInverseConfiguration
-    BrandCarEntity toMarcaCocheEntity (BrandCarPojo marcaPojo);
+    @InheritInverseConfiguration  //viceversa del anterior
+    BrandCarEntity toMarcaCocheEntity (BrandCarDto marcaPojo);
 
 
     /**
      * Retorna una lista de marcas coches transformada a pojo de una lista de entidades
-     * @param marcacocheEntity Entidad a transformar
+     * @param marcasCocheEntity Entidad a transformar
      * @return lista transformada
      */
-    List<BrandCarPojo> toMarcasCochePojo(List<BrandCarEntity>marcacocheEntity);
+    List<BrandCarDto> toMarcasCochePojo(List<BrandCarEntity>marcasCocheEntity);
 
 
 }

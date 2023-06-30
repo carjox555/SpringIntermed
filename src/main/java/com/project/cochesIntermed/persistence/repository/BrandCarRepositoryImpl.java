@@ -1,16 +1,18 @@
 package com.project.cochesIntermed.persistence.repository;
 
 import com.project.cochesIntermed.persistence.mapper.mapper.IntBrandCarMapper;
-import com.project.cochesIntermed.domain.pojo.BrandCarPojo;
+import com.project.cochesIntermed.domain.dto.BrandCarDto;
 import com.project.cochesIntermed.domain.repository.IntBrandCarRpository;
 import com.project.cochesIntermed.persistence.entity.BrandCarEntity;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor
+@RequiredArgsConstructor //crea constructor con los atributos final
+//@NoArgsConstructor
 @Repository
 public class BrandCarRepositoryImpl implements IntBrandCarRpository {
     /**
@@ -24,7 +26,7 @@ public class BrandCarRepositoryImpl implements IntBrandCarRpository {
     private final IntBrandCarMapper intBrandCarMapper;
 
     @Override
-    public List<BrandCarPojo> getAll() {
+    public List<BrandCarDto> getAll() {
         return intBrandCarMapper.toMarcasCochePojo(intBrandCarCrudRepository.findAll());
     }
 
@@ -34,14 +36,14 @@ public class BrandCarRepositoryImpl implements IntBrandCarRpository {
      * @return d
      */
     @Override
-    public Optional<BrandCarPojo> getBrandCar(Integer id) {
+    public Optional<BrandCarDto> getBrandCar(Integer id) {
         return intBrandCarCrudRepository.findById(id)
                 //.map(brandCarEntity -> intBrandCarMapper.toMarcaCochePojo(brandCarEntity));
                 .map(intBrandCarMapper::toMarcaCochePojo);  //Metodo por referencia
     }
 
     @Override
-    public BrandCarPojo save(BrandCarPojo newBrandCar) {
+    public BrandCarDto save(BrandCarDto newBrandCar) {
         BrandCarEntity brandCarEntity = intBrandCarMapper.toMarcaCocheEntity(newBrandCar);
         return intBrandCarMapper.toMarcaCochePojo(intBrandCarCrudRepository.save(brandCarEntity));
     }

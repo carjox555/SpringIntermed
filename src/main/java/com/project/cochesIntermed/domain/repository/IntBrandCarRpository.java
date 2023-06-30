@@ -1,6 +1,6 @@
 package com.project.cochesIntermed.domain.repository;
 
-import com.project.cochesIntermed.domain.pojo.BrandCarPojo;
+import com.project.cochesIntermed.domain.dto.BrandCarDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,7 +12,7 @@ public interface IntBrandCarRpository {
      * Devuelve una lista con todas las marcas de los coches
      * @return lista con marcas dee coches
      */
-    List<BrandCarPojo> getAll();
+    List<BrandCarDto> getAll();
 
     /**
      * Devuelve una marca de coche por id
@@ -20,14 +20,14 @@ public interface IntBrandCarRpository {
      * @return una marca de coche encontrada
      */
     //Optional para manejar los objetos nulos  (nullpointerException)
-    Optional<BrandCarPojo> getBrandCar(Integer id);
+    Optional<BrandCarDto> getBrandCar(Integer id);
 
     /**
      * Guarda una nueva marca coche
      * @param newBrandCar marca coche guardar
      * @return marca de coche guardada
      */
-    BrandCarPojo save(BrandCarPojo newBrandCar);
+    BrandCarDto save(BrandCarDto newBrandCar);
 
     /**
      * Elimina una marca coche dado su id

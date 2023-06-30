@@ -1,4 +1,4 @@
-package com.project.cochesIntermed.domain.pojo;
+package com.project.cochesIntermed.domain.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +8,7 @@ import lombok.Setter;
  */
 
 @Getter @Setter
-public class BrandCarPojo {
+public class BrandCarDto {
 
     private Integer id;
     private String description;
