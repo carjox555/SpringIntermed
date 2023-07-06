@@ -4,7 +4,6 @@ import com.project.cochesIntermed.domain.dto.BrandCarDto;
 import com.project.cochesIntermed.domain.repository.IntBrandCarRpository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,13 +34,19 @@ public class BrandCarServiceImpl implements IntBrandCarService {
     }
 
     @Override
+    public Optional<BrandCarDto> update(BrandCarDto newBrandcar) {
+       if  (intBrandCarRpository.getBrandCar(newBrandcar.getId()).isEmpty()){
+            return  Optional.empty();
+        }
+        return Optional.of(intBrandCarRpository.save(newBrandcar));
+    }
+
+    @Override
     public Boolean delete(Integer idBrandCar) {
-        try {
-            intBrandCarRpository.delete(idBrandCar);
-            return true;
-        }catch (Exception e){
+        if(intBrandCarRpository.getBrandCar(idBrandCar).isEmpty()){
+            return false;
+        }intBrandCarRpository.delete(idBrandCar);
             return false;
 
         }
     }
-}

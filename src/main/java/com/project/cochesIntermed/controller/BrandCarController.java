@@ -33,7 +33,7 @@ public class BrandCarController {
         return ResponseEntity.of(intBrandCarService.getBrandCar(id));
     }
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<BrandCarDto> save(@RequestBody BrandCarDto brandCarPojoNew){
         try {
             return ResponseEntity.status(HttpStatus.CREATED)
@@ -42,10 +42,10 @@ public class BrandCarController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
-    @PutMapping
+    @PutMapping()
     public ResponseEntity<BrandCarDto>update(@RequestBody BrandCarDto brandCarPojoUpdate){
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(intBrandCarService.save(brandCarPojoUpdate));
+        return ResponseEntity.of(intBrandCarService.update(brandCarPojoUpdate));
+
     }
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<BrandCarDto> delete(@PathVariable Integer id){

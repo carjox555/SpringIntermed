@@ -11,8 +11,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor //crea constructor con los atributos final
+//@RequiredArgsConstructor //crea constructor con los atributos final
 //@NoArgsConstructor
+
 @Repository
 public class BrandCarRepositoryImpl implements IntBrandCarRpository {
     /**
@@ -24,6 +25,11 @@ public class BrandCarRepositoryImpl implements IntBrandCarRpository {
      * Mapper de marca coche
      */
     private final IntBrandCarMapper intBrandCarMapper;
+
+    public BrandCarRepositoryImpl(IntBrandCarCrudRepository intBrandCarCrudRepository, IntBrandCarMapper intBrandCarMapper) {
+        this.intBrandCarCrudRepository = intBrandCarCrudRepository;
+        this.intBrandCarMapper = intBrandCarMapper;
+    }
 
     @Override
     public List<BrandCarDto> getAll() {

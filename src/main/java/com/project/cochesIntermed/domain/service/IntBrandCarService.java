@@ -30,6 +30,13 @@ public interface IntBrandCarService {
     BrandCarDto save(BrandCarDto newBrandCar);
 
     /**
+     * Actualiza marca coche
+     * @param newBrandcar marca coche a actualizar
+     * @return marca coche actualizada
+     */
+    Optional<BrandCarDto> update( BrandCarDto newBrandcar);
+
+    /**
      * Elimina una marca coche dado su id
      * @param idBrandCar id de marca coche a eliminar
      */
