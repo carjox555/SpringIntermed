@@ -31,7 +31,7 @@ public class BrandCarRepositoryImpl implements IntBrandCarRpository {
 
     @Override
     public List<BrandCarDto> getAll() {
-        return intBrandCarMapper.toMarcasCochePojo(intBrandCarCrudRepository.findAll());
+        return intBrandCarMapper.toMarcasCocheDto(intBrandCarCrudRepository.findAll());
     }
 
     /**
@@ -43,13 +43,13 @@ public class BrandCarRepositoryImpl implements IntBrandCarRpository {
     public Optional<BrandCarDto> getBrandCar(Integer id) {
         return intBrandCarCrudRepository.findById(id)
                 //.map(brandCarEntity -> intBrandCarMapper.toMarcaCochePojo(brandCarEntity));
-                .map(intBrandCarMapper::toMarcaCochePojo);  //Metodo por referencia
+                .map(intBrandCarMapper::toMarcaCocheDto);  //Metodo por referencia
     }
 
     @Override
     public BrandCarDto save(BrandCarDto newBrandCar) {
         BrandCarEntity brandCarEntity = intBrandCarMapper.toMarcaCocheEntity(newBrandCar);
-        return intBrandCarMapper.toMarcaCochePojo(intBrandCarCrudRepository.save(brandCarEntity));
+        return intBrandCarMapper.toMarcaCocheDto(intBrandCarCrudRepository.save(brandCarEntity));
     }
 
     @Override

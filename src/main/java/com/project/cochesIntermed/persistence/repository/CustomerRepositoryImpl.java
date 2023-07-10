@@ -2,6 +2,8 @@ package com.project.cochesIntermed.persistence.repository;
 
 import com.project.cochesIntermed.domain.dto.CustomerDto;
 import com.project.cochesIntermed.domain.repository.IntCustomerRepository;
+import com.project.cochesIntermed.persistence.entity.BrandCarEntity;
+import com.project.cochesIntermed.persistence.entity.CustomerEntity;
 import com.project.cochesIntermed.persistence.mapper.mapper.IntCustomerMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -22,21 +24,25 @@ public class CustomerRepositoryImpl implements IntCustomerRepository {
 
     @Override
     public Optional<CustomerDto> getCustomerByCardId(String cardId) {
-        return Optional.empty();
+
+        return iCustomerCrudRepository.findById(cardId)
+                .map(intCustomerMapper::toCustomerDto);
     }
 
     @Override
     public Optional<CustomerDto> getCustomerByEmail(String email) {
-        return Optional.empty();
+
+        return iCustomerCrudRepository.findByEmailCustomer(email)
+                .map(intCustomerMapper::toCustomerDto);
     }
 
     @Override
     public CustomerDto save(CustomerDto newCustomer) {
-        return null;
+        return intCustomerMapper.toCustomerDto(iCustomerCrudRepository.save(intCustomerMapper.toCustomerEntity(newCustomer)));
     }
 
     @Override
     public void delete(String cardId) {
-
+        iCustomerCrudRepository.deleteById(cardId);
     }
 }

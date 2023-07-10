@@ -21,7 +21,7 @@ public interface IntBrandCarMapper {
      */
     @Mapping(source="id", target = "id")
     @Mapping(source="description", target = "description")
-    BrandCarDto toMarcaCochePojo(BrandCarEntity marcaEntity);
+    BrandCarDto toMarcaCocheDto(BrandCarEntity marcaEntity);
     /**
      * Convierte un pojo a una entidad de marca coche
      * @param marcaPojo Pojo a convertir
@@ -36,7 +36,7 @@ public interface IntBrandCarMapper {
      * @param marcasCocheEntity Entidad a transformar
      * @return lista transformada
      */
-    List<BrandCarDto> toMarcasCochePojo(List<BrandCarEntity>marcasCocheEntity);
+    List<BrandCarDto> toMarcasCocheDto(List<BrandCarEntity>marcasCocheEntity);
 
 
 }
