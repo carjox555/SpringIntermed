@@ -5,6 +5,10 @@ import com.project.cochesIntermed.domain.dto.BrandCarDto;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Repositorio de marca coche
+ */
+
 public interface IntBrandCarRpository {
     //Metodos
 
