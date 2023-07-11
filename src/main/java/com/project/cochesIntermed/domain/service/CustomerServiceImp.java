@@ -3,6 +3,7 @@ package com.project.cochesIntermed.domain.service;
 import com.project.cochesIntermed.domain.dto.CustomerDto;
 import com.project.cochesIntermed.domain.dto.ResponseCustomerDto;
 import com.project.cochesIntermed.domain.repository.IntCustomerRepository;
+import com.project.cochesIntermed.exception.EmailValidationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -33,11 +34,16 @@ public class CustomerServiceImp implements ICustomerService {
 
     @Override
     public ResponseCustomerDto save(CustomerDto newCustomer) {
-        String passwordGenerate= generateRandomPassword(8)
-        newCustomer.setPassword(generateRandomPassword(8));
+
+        if(newCustomer.getEmail().contains("@email.com")){
+            throw new EmailValidationException();
+        }
+        String passwordGenerate= generateRandomPassword(8);
+        newCustomer.setPassword(passwordGenerate);
         newCustomer.setActive(1);
         intCustomerRepository.save(newCustomer);
-        return;
+
+        return new ResponseCustomerDto(passwordGenerate);
     }
 
     @Override

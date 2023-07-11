@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Interface de servicsio repository
+ * Interface de servicio repository
  */
 
 public interface ICustomerService {

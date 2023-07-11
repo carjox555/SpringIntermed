@@ -42,7 +42,7 @@ public class BrandCarController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
-    @PutMapping()
+    @PatchMapping()
     public ResponseEntity<BrandCarDto>update(@RequestBody BrandCarDto brandCarPojoUpdate){
         return ResponseEntity.of(intBrandCarService.update(brandCarPojoUpdate));
 
