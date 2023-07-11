@@ -31,6 +31,7 @@ public class BrandCarServiceImpl implements IntBrandCarService {
 
     @Override
     public BrandCarDto save(BrandCarDto newBrandCar) {
+
         return intBrandCarRpository.save(newBrandCar);
     }
 
@@ -51,4 +52,6 @@ public class BrandCarServiceImpl implements IntBrandCarService {
             return false;
 
         }
+
+
     }
