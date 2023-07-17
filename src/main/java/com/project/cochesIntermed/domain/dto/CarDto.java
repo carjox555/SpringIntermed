@@ -1,7 +1,12 @@
 package com.project.cochesIntermed.domain.dto;
+
+import lombok.Getter;
+import lombok.Setter;
+
 /*
 Dto que modela un coche
  */
+@Getter @Setter
 public class CarDto {
     private Integer codeCar;
     private Integer brandCarId;

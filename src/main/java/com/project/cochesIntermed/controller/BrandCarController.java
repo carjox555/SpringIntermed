@@ -1,10 +1,9 @@
 package com.project.cochesIntermed.controller;
 
-import com.project.cochesIntermed.domain.service.IntBrandCarService;
+import com.project.cochesIntermed.domain.useCase.IntBrandCarUseCase;
 import com.project.cochesIntermed.domain.dto.BrandCarDto;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +17,7 @@ import java.util.List;
 @RequestMapping(path = "/marca-coches")
 public class BrandCarController {
 
-    private IntBrandCarService intBrandCarService;
+    private IntBrandCarUseCase intBrandCarService;
 
     @GetMapping
     public ResponseEntity<List<BrandCarDto>> getAll() {

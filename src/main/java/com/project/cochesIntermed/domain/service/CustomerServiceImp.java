@@ -3,6 +3,7 @@ package com.project.cochesIntermed.domain.service;
 import com.project.cochesIntermed.domain.dto.CustomerDto;
 import com.project.cochesIntermed.domain.dto.ResponseCustomerDto;
 import com.project.cochesIntermed.domain.repository.IntCustomerRepository;
+import com.project.cochesIntermed.domain.useCase.ICustomerService;
 import com.project.cochesIntermed.exception.EmailValidationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

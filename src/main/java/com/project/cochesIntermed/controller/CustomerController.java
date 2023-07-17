@@ -1,12 +1,9 @@
 package com.project.cochesIntermed.controller;
 
-import com.project.cochesIntermed.domain.dto.BrandCarDto;
 import com.project.cochesIntermed.domain.dto.CustomerDto;
 import com.project.cochesIntermed.domain.dto.ResponseCustomerDto;
-import com.project.cochesIntermed.domain.service.CustomerServiceImp;
-import com.project.cochesIntermed.domain.service.ICustomerService;
+import com.project.cochesIntermed.domain.useCase.ICustomerService;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

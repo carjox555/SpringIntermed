@@ -1,11 +1,11 @@
-package com.project.cochesIntermed.domain.service;
+package com.project.cochesIntermed.domain.useCase;
 
 import com.project.cochesIntermed.domain.dto.BrandCarDto;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface IntBrandCarService {
+public interface IntBrandCarUseCase {
     //Metodos
 
     /**

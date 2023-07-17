@@ -1,4 +1,4 @@
-package com.project.cochesIntermed.domain.service;
+package com.project.cochesIntermed.domain.useCase;
 
 import com.project.cochesIntermed.domain.dto.CustomerDto;
 import com.project.cochesIntermed.domain.dto.ResponseCustomerDto;

@@ -1,19 +1,18 @@
-package com.project.cochesIntermed.domain.repository;
+package com.project.cochesIntermed.domain.useCase;
 
 import com.project.cochesIntermed.domain.dto.CarDto;
-import com.project.cochesIntermed.domain.dto.CustomerDto;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface IntCarRepository {
+public interface IcarUseCase {
 
     List<CarDto> getAll();
 
     //Optional para manejar los objetos nulos  (nullpointerException)
     Optional<CarDto> getCar(Integer idCar);
 
-    List<CarDto>getByIdBrandCar(Integer idBrandCar);
+    List<CarDto>getByIdBrandCar(Integer idCar);
 
     /*
     Retorna carros que son de menor precio
@@ -23,5 +22,5 @@ public interface IntCarRepository {
     CarDto save(CarDto newCar);
 
 
-    void delete(Integer idCar);
+    boolean delete(Integer idCar);
 }
