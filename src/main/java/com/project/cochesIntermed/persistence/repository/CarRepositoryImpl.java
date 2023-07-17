@@ -13,8 +13,8 @@ import java.util.Optional;
 @Repository
 public class CarRepositoryImpl implements IntCarRepository {
 
-    private final IntCarCrudRepository intCarCrudRepository;
-    private final IntCarMapper intCarMapper;
+    private IntCarCrudRepository intCarCrudRepository;
+    private  IntCarMapper intCarMapper;
     @Override
     public List<CarDto> getAll() {
         return intCarMapper.toCarDtoList(intCarCrudRepository.findAll());

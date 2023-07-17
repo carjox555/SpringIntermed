@@ -3,16 +3,17 @@ package com.project.cochesIntermed.domain.service;
 import com.project.cochesIntermed.domain.dto.CarDto;
 import com.project.cochesIntermed.domain.repository.IntCarRepository;
 import com.project.cochesIntermed.domain.useCase.IcarUseCase;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class CarServiceImpl implements IcarUseCase {
 
-    private final IntCarRepository intCarRepository;
+    private IntCarRepository intCarRepository;
     @Override
     public List<CarDto> getAll() {
         return intCarRepository.getAll();

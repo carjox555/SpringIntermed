@@ -5,6 +5,8 @@ import com.project.cochesIntermed.domain.dto.ResponseCustomerDto;
 import com.project.cochesIntermed.domain.repository.IntCustomerRepository;
 import com.project.cochesIntermed.domain.useCase.ICustomerService;
 import com.project.cochesIntermed.exception.EmailValidationException;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +14,10 @@ import java.security.SecureRandom;
 import java.util.List;
 import java.util.Optional;
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 
 public class CustomerServiceImp implements ICustomerService {
-    private final IntCustomerRepository intCustomerRepository;
+    private IntCustomerRepository intCustomerRepository;
 
 
     @Override
@@ -44,7 +46,7 @@ public class CustomerServiceImp implements ICustomerService {
         newCustomer.setActive(1);
         intCustomerRepository.save(newCustomer);
 
-        return new ResponseCustomerDto(passwordGenerate);
+        return new ResponseCustomerDto();
     }
 
     @Override
