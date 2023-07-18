@@ -1,7 +1,9 @@
 package com.project.cochesIntermed.persistence.entity;
 
-import com.project.cochesIntermed.domain.dto.CarPurchaseRequestDto;
+
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.List;
 
 
 @Entity
+@Getter @Setter
 @Table(name = "compras")
 public class PurchaseEntity {
     @Id
@@ -31,6 +34,10 @@ public class PurchaseEntity {
 
     @Column(name = "medio_pago")
     private String typePayement;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_cedula", insertable = false, updatable = false)
+    private CustomerEntity customerEntity;
 
     @OneToMany(mappedBy = "purchaseEntity", cascade = {CascadeType.ALL})
     private List<CarPurchaseEntity> carsPurchase;

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 /**
  * Entidad de un Cliente
  */
@@ -28,4 +30,7 @@ public class CustomerEntity {
     private Integer active;
     @Column(name = "password")
     private String password;
+
+    @OneToMany(mappedBy = "customerEntity")
+    private List<PurchaseEntity> purchaseEntity;
 }

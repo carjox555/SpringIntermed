@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -27,7 +29,7 @@ public class CarEntity {
     @Column(name = "numero_caballos_fuerza")
     private Double horsepower;
 
-    @Column(name = "numero _puertas")
+    @Column(name = "numero_puertas")
     private Double numberDoor;
 
     @Column(name = "cilindraje")
@@ -57,5 +59,8 @@ public class CarEntity {
     @ManyToOne
     @JoinColumn(name = "marca_coche_id", insertable= false, updatable = false)
     private BrandCarEntity brandCarEntity;
+
+    @OneToMany (mappedBy = "carEntity")
+    private List<CarPurchaseEntity> carPurchaseEntity;
 
 }

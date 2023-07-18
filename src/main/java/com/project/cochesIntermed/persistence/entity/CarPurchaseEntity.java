@@ -21,7 +21,12 @@ public class CarPurchaseEntity {
     private Integer total;
 
     @ManyToOne
+    @MapsId(value = "purchaseNumberBill")  //a nivel de backend
+    @JoinColumn(name = "compras_numero_factura",insertable = false,updatable = false)
     private PurchaseEntity purchaseEntity;
+
+    @ManyToOne
+    @JoinColumn(name = "compras_numero_factura",insertable = false,updatable = false)
 
     public Integer getQuantity() {
         return quantity;
